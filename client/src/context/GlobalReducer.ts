@@ -7,7 +7,7 @@ const reducer = (state: GlobalStateProps, action: Action): GlobalStateProps => {
         case 'SET_LOADING':
             return {
                 ...state,
-                isLoading: true,
+                isLoading: action.payload as GlobalStateProps['isLoading'],
             };
         case 'SEARCH_JOBS':
             return {
