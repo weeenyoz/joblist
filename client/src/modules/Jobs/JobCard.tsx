@@ -44,7 +44,9 @@ const JobCard: React.FC<JobCardProps> = (props: JobCardProps) => {
                 </Grid>
 
                 <Grid item xs={12} md={4}>
-                    <SalaryRange data={{ from: salary_range_from, to: salary_range_to }} />
+                    <SalaryRange
+                        data={{ salaryFrom: salary_range_from, salaryTo: salary_range_to }}
+                    />
                 </Grid>
 
                 <Grid item xs={12} className={classes.jobRequirements}>
