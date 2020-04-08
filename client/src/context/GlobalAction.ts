@@ -1,9 +1,10 @@
 import { GlobalStateProps } from './GlobalState';
+import { GetJobsResponse } from '../modules/Jobs/interface';
 import axios from 'axios';
 
 export interface SearchJobsAction {
     type: string;
-    payload: GlobalStateProps['jobs'] | GlobalStateProps['error'];
+    payload: GetJobsResponse | GlobalStateProps['error'];
 }
 
 export type Action = SearchJobsAction;
@@ -13,11 +14,12 @@ export const getJobs = async (query: string): Promise<SearchJobsAction> => {
         const result = await axios.get(
             `https://search.bossjob.com/api/v1/search/job_filter?size=10&query=${query}`,
         );
-        const jobs = result.data.data.jobs;
+
+        const data = result.data.data;
 
         return {
             type: 'SEARCH_JOBS',
-            payload: jobs,
+            payload: data,
         };
     } catch (error) {
         return {

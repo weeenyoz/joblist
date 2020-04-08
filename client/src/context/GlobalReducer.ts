@@ -1,12 +1,13 @@
 import { GlobalStateProps } from './GlobalState';
 import { Action } from './GlobalAction';
+import { GetJobsResponse } from '../modules/Jobs/interface';
 
 const reducer = (state: GlobalStateProps, action: Action): GlobalStateProps => {
     switch (action.type) {
         case 'SEARCH_JOBS':
             return {
                 ...state,
-                jobs: [...(action.payload as GlobalStateProps['jobs']), ...state.jobs],
+                data: action.payload as GetJobsResponse,
             };
         case 'JOBS_ERROR':
             return {

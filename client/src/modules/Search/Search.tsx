@@ -28,7 +28,7 @@ const Search: React.FC = () => {
 
     const [searchText, setSearchText] = useState('');
 
-    const { jobs, dispatch } = useContext(GlobalContext);
+    const { dispatch } = useContext(GlobalContext);
 
     const changeHandler = (event: React.ChangeEvent<HTMLInputElement>) => {
         setSearchText(event.target.value);
