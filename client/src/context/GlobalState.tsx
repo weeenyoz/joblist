@@ -5,14 +5,14 @@ import { GetJobsResponse } from '../modules/Jobs/interface';
 
 export interface GlobalStateProps {
     data: GetJobsResponse;
-    loading: boolean;
+    isLoading: boolean;
     dispatch: Dispatch<Action>;
     error: string[];
 }
 
 const initialState: GlobalStateProps = {
     data: { jobs: [], max_score: null, page: 0, size: 0, total_num: 0, sort: 0, query: '' },
-    loading: false,
+    isLoading: false,
     dispatch: () => {},
     error: [''],
 };
