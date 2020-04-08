@@ -7,7 +7,6 @@ const useStyles = makeStyles((theme: Theme) =>
         title: {
             textAlign: 'left',
             margin: '0',
-            color: theme.palette.primary.main,
         },
     }),
 );

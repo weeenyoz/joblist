@@ -12,7 +12,7 @@ export type Action = SearchJobsAction;
 export const getJobs = async (query: string): Promise<SearchJobsAction> => {
     try {
         const result = await axios.get(
-            `https://search.bossjob.com/api/v1/search/job_filter?size=10&query=${query}`,
+            `https://search.bossjob.com/api/v1/search/job_filter?size=12&query=${query}`,
         );
 
         const data = result.data.data;

@@ -5,8 +5,8 @@ import SalaryRange from './SalaryRange';
 import JobRequirements from './JobRequirements';
 import CompanyName from './CompanyName';
 import Hours from './Hours';
-import './styles.scss';
 import { JobProps } from './interface';
+import './styles.scss';
 
 const useStyles = makeStyles((theme: Theme) =>
     createStyles({

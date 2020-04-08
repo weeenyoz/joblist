@@ -2,10 +2,9 @@ import React, { useContext } from 'react';
 import { GlobalContext } from '../../context/GlobalState';
 import JobCard from './JobCard';
 
-const JobsCards = () => {
+const JobsCards: React.FC = () => {
     const { data } = useContext(GlobalContext);
 
-    console.log('data.jobs: ', data.jobs);
     return (
         <>
             {data.jobs.map((job) => (
