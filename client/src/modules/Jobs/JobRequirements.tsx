@@ -3,7 +3,6 @@ import { Grid, createStyles, makeStyles, Theme } from '@material-ui/core';
 import LocationOnOutlinedIcon from '@material-ui/icons/LocationOnOutlined';
 import SchoolOutlinedIcon from '@material-ui/icons/SchoolOutlined';
 import BusinessCenterOutlinedIcon from '@material-ui/icons/BusinessCenterOutlined';
-import WatchLaterTwoToneIcon from '@material-ui/icons/WatchLaterTwoTone';
 import WatchLaterOutlinedIcon from '@material-ui/icons/WatchLaterOutlined';
 import { JobProps } from './interface';
 
