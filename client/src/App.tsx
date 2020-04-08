@@ -1,8 +1,16 @@
-import React from "react";
-import "./App.scss";
+import React from 'react';
+import './App.scss';
+import Search from './modules/Search/Search';
+import GlobalStateProvider from './context/GlobalState';
 
-function App() {
-  return <div className="App">test</div>;
-}
+const App = () => {
+    return (
+        <div className="App">
+            <GlobalStateProvider>
+                <Search />
+            </GlobalStateProvider>
+        </div>
+    );
+};
 
 export default App;
