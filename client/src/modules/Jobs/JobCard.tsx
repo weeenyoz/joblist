@@ -33,6 +33,7 @@ const JobCard: React.FC<JobCardProps> = (props: JobCardProps) => {
         job_type,
         xp_lvl,
         job_location,
+        company_name,
     } = props;
 
     return (
@@ -58,7 +59,7 @@ const JobCard: React.FC<JobCardProps> = (props: JobCardProps) => {
                 </Grid>
 
                 <Grid item xs={12} className={classes.companyAndHours}>
-                    <CompanyName />
+                    <CompanyName name={company_name} />
                     <Hours />
                 </Grid>
             </Grid>

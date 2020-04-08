@@ -17,6 +17,7 @@
 }
 
 .company-name {
+   width: 80%;
    text-align: left;
 }
 
@@ -31,6 +32,11 @@
    .salary-range {
       justify-content: flex-start;
       margin: 10px 0 0 0;
+   }
+
+   .hours {
+      display: flex;
+      align-items: flex-end;
    }
 }
 
