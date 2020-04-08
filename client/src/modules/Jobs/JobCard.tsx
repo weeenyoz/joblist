@@ -25,7 +25,16 @@ interface JobCardProps extends JobProps {}
 const JobCard: React.FC<JobCardProps> = (props: JobCardProps) => {
     const classes = useStyles();
 
-    const { job_title, salary_range_from, salary_range_to } = props;
+    const {
+        job_title,
+        salary_range_from,
+        salary_range_to,
+        job_country,
+        degree,
+        job_type,
+        xp_lvl,
+        job_location,
+    } = props;
 
     return (
         <>
@@ -39,7 +48,14 @@ const JobCard: React.FC<JobCardProps> = (props: JobCardProps) => {
                 </Grid>
 
                 <Grid item xs={12} className={classes.jobDetails}>
-                    <JobDetails />
+                    <JobDetails
+                        data={{
+                            experience: xp_lvl,
+                            degree,
+                            jobType: job_type,
+                            jobLocation: job_location,
+                        }}
+                    />
                 </Grid>
 
                 <Grid item xs={12} className={classes.companyAndHours}>
