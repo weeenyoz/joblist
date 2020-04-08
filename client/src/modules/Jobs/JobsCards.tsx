@@ -3,13 +3,14 @@ import { GlobalContext } from '../../context/GlobalState';
 import JobCard from './JobCard';
 
 const JobsCards: React.FC = () => {
-    const { data, isLoading } = useContext(GlobalContext);
+    const { data, error, isLoading } = useContext(GlobalContext);
 
     const { jobs } = data;
 
     return (
         <>
             {!isLoading &&
+                !error &&
                 jobs &&
                 jobs.map((job) => (
                     <div key={job.id}>

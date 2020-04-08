@@ -18,6 +18,7 @@ const reducer = (state: GlobalStateProps, action: Action): GlobalStateProps => {
         case 'JOBS_ERROR':
             return {
                 ...state,
+                isLoading: false,
                 error: action.payload as GlobalStateProps['error'],
             };
         default:
