@@ -8,9 +8,6 @@ import { GlobalContext } from '../../context/GlobalState';
 
 const useStyles = makeStyles((theme: Theme) =>
     createStyles({
-        root: {
-            width: '50%',
-        },
         searchBox: {
             display: 'flex',
             flexDirection: 'column',
@@ -41,7 +38,7 @@ const Search: React.FC = () => {
 
     return (
         <>
-            <Card className={classes.root}>
+            <Card>
                 <CardContent>
                     <Box className={classes.searchBox}>
                         <Box className={classes.searchField}>

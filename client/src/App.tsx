@@ -1,14 +1,20 @@
 import React from 'react';
 import './App.scss';
-import Search from './modules/Search/Search';
 import GlobalStateProvider from './context/GlobalState';
+import Search from './modules/Search/Search';
+import JobsCount from './modules/Jobs/JobsCount';
 
 const App = () => {
     return (
         <div className="App">
-            <GlobalStateProvider>
-                <Search />
-            </GlobalStateProvider>
+            <div className="container">
+                <GlobalStateProvider>
+                    <Search />
+                    <div className="body">
+                        <JobsCount />
+                    </div>
+                </GlobalStateProvider>
+            </div>
         </div>
     );
 };
