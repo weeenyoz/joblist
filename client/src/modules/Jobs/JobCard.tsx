@@ -2,7 +2,7 @@ import React from 'react';
 import { Grid, createStyles, makeStyles, Theme } from '@material-ui/core';
 import JobHeader from './JobHeader';
 import SalaryRange from './SalaryRange';
-import JobDetails from './JobDetails';
+import JobRequirements from './JobRequirements';
 import CompanyName from './CompanyName';
 import Hours from './Hours';
 import './styles.scss';
@@ -10,7 +10,7 @@ import { JobProps } from './interface';
 
 const useStyles = makeStyles((theme: Theme) =>
     createStyles({
-        jobDetails: {
+        jobRequirements: {
             margin: '30px 0',
         },
         companyAndHours: {
@@ -29,7 +29,6 @@ const JobCard: React.FC<JobCardProps> = (props: JobCardProps) => {
         job_title,
         salary_range_from,
         salary_range_to,
-        job_country,
         degree,
         job_type,
         xp_lvl,
@@ -47,8 +46,8 @@ const JobCard: React.FC<JobCardProps> = (props: JobCardProps) => {
                     <SalaryRange data={{ from: salary_range_from, to: salary_range_to }} />
                 </Grid>
 
-                <Grid item xs={12} className={classes.jobDetails}>
-                    <JobDetails
+                <Grid item xs={12} className={classes.jobRequirements}>
+                    <JobRequirements
                         data={{
                             experience: xp_lvl,
                             degree,
