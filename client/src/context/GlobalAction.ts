@@ -36,7 +36,7 @@ export const getJobs = async (query: string): Promise<SearchJobsAction> => {
     } catch (error) {
         return {
             type: 'JOBS_ERROR',
-            payload: error.error,
+            payload: 'An Error Occured',
         };
     }
 };

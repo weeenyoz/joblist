@@ -7,14 +7,14 @@ export interface GlobalStateProps {
     data: GetJobsResponse;
     isLoading: boolean;
     dispatch: Dispatch<Action>;
-    error: string[];
+    error: string;
 }
 
 const initialState: GlobalStateProps = {
     data: { jobs: [], max_score: null, page: 0, size: 0, total_num: 0, sort: 0, query: '' },
     isLoading: false,
     dispatch: () => {},
-    error: [''],
+    error: '',
 };
 
 export const GlobalContext = createContext<GlobalStateProps>(initialState);
