@@ -6,6 +6,7 @@ import JobDetails from './JobDetails';
 import CompanyName from './CompanyName';
 import Hours from './Hours';
 import './styles.scss';
+import { JobProps } from './interface';
 
 const useStyles = makeStyles((theme: Theme) =>
     createStyles({
@@ -19,17 +20,22 @@ const useStyles = makeStyles((theme: Theme) =>
     }),
 );
 
-const JobCard = () => {
+interface JobCardProps extends JobProps {}
+
+const JobCard: React.FC<JobCardProps> = (props: JobCardProps) => {
     const classes = useStyles();
+
+    const { job_title, salary_range_from, salary_range_to } = props;
+
     return (
         <>
             <Grid container>
                 <Grid item xs={12} md={8}>
-                    <JobHeader />
+                    <JobHeader title={job_title} />
                 </Grid>
 
                 <Grid item xs={12} md={4}>
-                    <SalaryRange />
+                    <SalaryRange data={{ from: salary_range_from, to: salary_range_to }} />
                 </Grid>
 
                 <Grid item xs={12} className={classes.jobDetails}>

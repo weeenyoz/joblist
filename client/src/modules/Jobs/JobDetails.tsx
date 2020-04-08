@@ -10,6 +10,7 @@ const useStyles = makeStyles((theme: Theme) =>
         jobDetail: {
             display: 'flex',
             alignItems: 'center',
+            margin: '10px 0',
         },
     }),
 );

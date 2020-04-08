@@ -1,9 +1,16 @@
 import React from 'react';
+import { JobProps } from './interface';
 
-const JobHeader = () => {
+interface HeaderProps {
+    title: JobProps['job_title'];
+}
+
+const JobHeader: React.FC<HeaderProps> = (props: HeaderProps) => {
+    const { title } = props;
+
     return (
         <>
-            <h4 className="title">Customer service associate</h4>
+            <h4 className="title">{title}</h4>
         </>
     );
 };
