@@ -31,23 +31,42 @@ const JobDetails: React.FC<JobDetailsProps> = (props: JobDetailsProps) => {
     const { data } = props;
     const { experience, degree, jobType, jobLocation } = data;
 
-    return (
-        <Grid container>
-            <Grid item xs={12} md={6} className={classes.jobDetail}>
-                <LocationOnTwoToneIcon /> <span style={{ marginLeft: '10px' }}>{jobLocation}</span>
-            </Grid>
-            <Grid item xs={12} md={6} className={classes.jobDetail}>
-                <BusinessCenterTwoToneIcon />
+    const getRequirements = () => {
+        let location = (
+            <>
+                <LocationOnTwoToneIcon color="primary" />
+                <span style={{ marginLeft: '10px' }}>{jobLocation}</span>
+            </>
+        );
+        let exp = (
+            <>
+                <BusinessCenterTwoToneIcon color="primary" />
                 <span style={{ marginLeft: '10px' }}>{experience}</span>
-            </Grid>
+            </>
+        );
+        let deg = (
+            <>
+                <SchoolTwoToneIcon color="primary" />
+                <span style={{ marginLeft: '10px' }}>{degree}</span>
+            </>
+        );
+        let type = (
+            <>
+                <WatchLaterTwoToneIcon color="primary" />
+                <span style={{ marginLeft: '10px' }}>{jobType}</span>
+            </>
+        );
+
+        let requirements = [location, exp, deg, type];
+
+        return requirements.map((requirement) => (
             <Grid item xs={12} md={6} className={classes.jobDetail}>
-                <SchoolTwoToneIcon /> <span style={{ marginLeft: '10px' }}>{degree}</span>
+                {requirement}
             </Grid>
-            <Grid item xs={12} md={6} className={classes.jobDetail}>
-                <WatchLaterTwoToneIcon /> <span style={{ marginLeft: '10px' }}>{jobType}</span>
-            </Grid>
-        </Grid>
-    );
+        ));
+    };
+
+    return <Grid container>{getRequirements()}</Grid>;
 };
 
 export default JobDetails;
