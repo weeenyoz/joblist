@@ -1,4 +1,4 @@
-import React, { useContext, useEffect } from 'react';
+import React, { useContext, useEffect, useState } from 'react';
 import { makeStyles } from '@material-ui/core/styles';
 import { Box, Card, CardContent, Button, createStyles, Theme } from '@material-ui/core';
 import { TextField } from '@material-ui/core';
@@ -26,16 +26,18 @@ const useStyles = makeStyles((theme: Theme) =>
 const Search: React.FC = () => {
     const classes = useStyles();
 
+    const [searchText, setSearchText] = useState('');
+
     const { jobs, dispatch } = useContext(GlobalContext);
 
-    const handleSearch = async () => {
-        const getJobsAction = await getJobs();
-        dispatch(getJobsAction);
+    const changeHandler = (event: React.ChangeEvent<HTMLInputElement>) => {
+        setSearchText(event.target.value);
     };
 
-    useEffect(() => {
-        console.log('jobs: ', jobs);
-    }, [jobs]);
+    const handleSearch = async () => {
+        const getJobsAction = await getJobs(searchText);
+        dispatch(getJobsAction);
+    };
 
     return (
         <>
@@ -47,6 +49,7 @@ const Search: React.FC = () => {
                             <TextField
                                 placeholder="Search for job title or company name"
                                 style={{ width: '100%', marginLeft: '5px' }}
+                                onChange={changeHandler}
                             />
                         </Box>
                         <Button

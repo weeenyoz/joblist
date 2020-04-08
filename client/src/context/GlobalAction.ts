@@ -8,10 +8,10 @@ export interface SearchJobsAction {
 
 export type Action = SearchJobsAction;
 
-export const getJobs = async (): Promise<SearchJobsAction> => {
+export const getJobs = async (query: string): Promise<SearchJobsAction> => {
     try {
         const result = await axios.get(
-            'https://search.bossjob.com/api/v1/search/job_filter?size=10&query=system',
+            `https://search.bossjob.com/api/v1/search/job_filter?size=10&query=${query}`,
         );
         const jobs = result.data.data.jobs;
 
