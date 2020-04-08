@@ -4,6 +4,7 @@ import GlobalStateProvider from './context/GlobalState';
 import Search from './modules/Search/Search';
 import JobsCount from './modules/Jobs/JobsCount';
 import JobsCards from './modules/Jobs/JobsCards';
+import Loading from './modules/Loading/Loading';
 import { ThemeProvider } from '@material-ui/core';
 import theme from './theme';
 
@@ -17,6 +18,7 @@ const App = () => {
                         <div className="body">
                             <JobsCount />
                             <JobsCards />
+                            <Loading />
                         </div>
                     </GlobalStateProvider>
                 </ThemeProvider>

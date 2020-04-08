@@ -2,12 +2,24 @@ import { GlobalStateProps } from './GlobalState';
 import { GetJobsResponse } from '../modules/Jobs/interface';
 import axios from 'axios';
 
+export interface SetLoadingAction {
+    type: string;
+    payload: boolean;
+}
+
 export interface SearchJobsAction {
     type: string;
     payload: GetJobsResponse | GlobalStateProps['error'];
 }
 
-export type Action = SearchJobsAction;
+export type Action = SearchJobsAction | SetLoadingAction;
+
+export const setLoading = (status: boolean): SetLoadingAction => {
+    return {
+        type: 'SET_LOADING',
+        payload: status,
+    };
+};
 
 export const getJobs = async (query: string): Promise<SearchJobsAction> => {
     try {

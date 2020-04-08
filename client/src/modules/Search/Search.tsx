@@ -2,7 +2,7 @@ import React, { useContext, useState } from 'react';
 import { makeStyles } from '@material-ui/core/styles';
 import { TextField, Box, Card, CardContent, Button, createStyles, Theme } from '@material-ui/core';
 import SearchTwoToneIcon from '@material-ui/icons/SearchTwoTone';
-import { getJobs } from '../../context/GlobalAction';
+import { getJobs, setLoading } from '../../context/GlobalAction';
 import { GlobalContext } from '../../context/GlobalState';
 
 const useStyles = makeStyles((theme: Theme) =>
@@ -31,6 +31,9 @@ const Search: React.FC = () => {
     };
 
     const handleSearch = async () => {
+        const setLoadingAction = setLoading(true);
+        dispatch(setLoadingAction);
+
         const getJobsAction = await getJobs(searchText);
         dispatch(getJobsAction);
     };

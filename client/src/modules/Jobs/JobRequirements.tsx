@@ -32,32 +32,32 @@ const JobDetails: React.FC<JobDetailsProps> = (props: JobDetailsProps) => {
     const { experience, degree, jobType, jobLocation } = data;
 
     const getRequirements = () => {
-        let location = (
+        const location = (
             <>
                 <LocationOnOutlinedIcon color="primary" />
                 <span style={{ marginLeft: '10px' }}>{jobLocation}</span>
             </>
         );
-        let exp = (
+        const exp = (
             <>
                 <BusinessCenterOutlinedIcon color="primary" />
                 <span style={{ marginLeft: '10px' }}>{experience}</span>
             </>
         );
-        let deg = (
+        const deg = (
             <>
                 <SchoolOutlinedIcon color="primary" />
                 <span style={{ marginLeft: '10px' }}>{degree}</span>
             </>
         );
-        let type = (
+        const type = (
             <>
                 <WatchLaterOutlinedIcon color="primary" />
                 <span style={{ marginLeft: '10px' }}>{jobType}</span>
             </>
         );
 
-        let requirements = [location, exp, deg, type];
+        const requirements = [location, exp, deg, type];
 
         return requirements.map((requirement) => (
             <Grid item xs={12} md={6} className={classes.jobDetail}>
