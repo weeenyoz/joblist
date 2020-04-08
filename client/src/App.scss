@@ -1,5 +1,12 @@
 .App {
   margin-top: 5%;
-  display: flex;
-  justify-content: center;
+
+  .container {
+    width: 50%;
+    margin: 0 auto;
+
+    .body {
+      margin: 20px;
+    }
+  }
 }

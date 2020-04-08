@@ -8,9 +8,6 @@ import { GlobalContext } from '../../context/GlobalState';
 
 const useStyles = makeStyles((theme: Theme) =>
     createStyles({
-        root: {
-            width: '50%',
-        },
         searchBox: {
             display: 'flex',
             flexDirection: 'column',
@@ -28,7 +25,7 @@ const Search: React.FC = () => {
 
     const [searchText, setSearchText] = useState('');
 
-    const { jobs, dispatch } = useContext(GlobalContext);
+    const { dispatch } = useContext(GlobalContext);
 
     const changeHandler = (event: React.ChangeEvent<HTMLInputElement>) => {
         setSearchText(event.target.value);
@@ -41,7 +38,7 @@ const Search: React.FC = () => {
 
     return (
         <>
-            <Card className={classes.root}>
+            <Card>
                 <CardContent>
                     <Box className={classes.searchBox}>
                         <Box className={classes.searchField}>
