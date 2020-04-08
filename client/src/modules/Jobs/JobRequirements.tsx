@@ -1,9 +1,10 @@
 import React from 'react';
 import { Grid, createStyles, makeStyles, Theme } from '@material-ui/core';
-import LocationOnTwoToneIcon from '@material-ui/icons/LocationOnTwoTone';
-import BusinessCenterTwoToneIcon from '@material-ui/icons/BusinessCenterTwoTone';
-import SchoolTwoToneIcon from '@material-ui/icons/SchoolTwoTone';
+import LocationOnOutlinedIcon from '@material-ui/icons/LocationOnOutlined';
+import SchoolOutlinedIcon from '@material-ui/icons/SchoolOutlined';
+import BusinessCenterOutlinedIcon from '@material-ui/icons/BusinessCenterOutlined';
 import WatchLaterTwoToneIcon from '@material-ui/icons/WatchLaterTwoTone';
+import WatchLaterOutlinedIcon from '@material-ui/icons/WatchLaterOutlined';
 import { JobProps } from './interface';
 
 const useStyles = makeStyles((theme: Theme) =>
@@ -34,25 +35,25 @@ const JobDetails: React.FC<JobDetailsProps> = (props: JobDetailsProps) => {
     const getRequirements = () => {
         let location = (
             <>
-                <LocationOnTwoToneIcon color="primary" />
+                <LocationOnOutlinedIcon color="primary" />
                 <span style={{ marginLeft: '10px' }}>{jobLocation}</span>
             </>
         );
         let exp = (
             <>
-                <BusinessCenterTwoToneIcon color="primary" />
+                <BusinessCenterOutlinedIcon color="primary" />
                 <span style={{ marginLeft: '10px' }}>{experience}</span>
             </>
         );
         let deg = (
             <>
-                <SchoolTwoToneIcon color="primary" />
+                <SchoolOutlinedIcon color="primary" />
                 <span style={{ marginLeft: '10px' }}>{degree}</span>
             </>
         );
         let type = (
             <>
-                <WatchLaterTwoToneIcon color="primary" />
+                <WatchLaterOutlinedIcon color="primary" />
                 <span style={{ marginLeft: '10px' }}>{jobType}</span>
             </>
         );

@@ -1,7 +1,6 @@
-import React, { useContext, useEffect, useState } from 'react';
+import React, { useContext, useState } from 'react';
 import { makeStyles } from '@material-ui/core/styles';
-import { Box, Card, CardContent, Button, createStyles, Theme } from '@material-ui/core';
-import { TextField } from '@material-ui/core';
+import { TextField, Box, Card, CardContent, Button, createStyles, Theme } from '@material-ui/core';
 import SearchTwoToneIcon from '@material-ui/icons/SearchTwoTone';
 import { getJobs } from '../../context/GlobalAction';
 import { GlobalContext } from '../../context/GlobalState';
