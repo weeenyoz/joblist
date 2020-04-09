@@ -6,7 +6,7 @@ const JobsCount: React.FC = () => {
 
     const { jobs } = data;
 
-    return <>{!isLoading && !error && !!jobs && <div>{jobs.length} jobs found</div>}</>;
+    return <>{!isLoading && !error && jobs.length > 0 && <div>{jobs.length} jobs found</div>}</>;
 };
 
 export default JobsCount;
